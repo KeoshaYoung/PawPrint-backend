@@ -1,0 +1,2 @@
+class YouthChallengesController < ApplicationController
+end
