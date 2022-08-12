@@ -1,0 +1,2 @@
+class YouthChallenge < ApplicationRecord
+end
