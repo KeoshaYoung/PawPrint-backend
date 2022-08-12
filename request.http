@@ -28,3 +28,6 @@ Content-Type: application/json
   "width": 640,
   "height": 480
 }
+
+### 
+GET http://localhost:3000/youth_challenges.json

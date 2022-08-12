@@ -1,0 +1,5 @@
+{
+  id: @youth_challenge.id,
+  created_at: @youth_challenge.created_at,
+  updated_at: @youth_challenge.updated_at
+}
