@@ -49,3 +49,8 @@ end
 gem 'jwt'
 
 gem 'jb'
+
+gem 'http'
+gem 'curb'
+gem 'json'
+gem 'rest-client'

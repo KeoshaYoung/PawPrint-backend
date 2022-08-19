@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   get "/youth_challenges/:id" => "youth_challenges#show"
   patch "/youth_challenges/:id" => "youth_challenges#update"
   delete "/youth_challenges/:id" => "youth_challenges#destroy"
+
+  get "/animal_shelters" => "animal_shelters#index"
 end

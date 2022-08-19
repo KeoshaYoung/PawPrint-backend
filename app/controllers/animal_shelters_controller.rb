@@ -1,6 +1,9 @@
 class AnimalSheltersController < ApplicationController
+  require "json"
+  require "rest-client"
+
   def index
-    @youth_challenges = YouthChallenge.all.order(:id)
-    render template: "youth_challenges/index"
+    shelters = JSON.load(RestClient.get("https://api.petfinder.com/v2/organizations", { "Authorization" => "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJ6MDRqTHp0eUM3cjVCUThzSjVBMmlqTzhlMGJPSThWUlhTRDJLNmY4VjlIS0ZZRmFMRCIsImp0aSI6ImNlZTI5MTQ4NjRjODM2N2Q2YmE1NzUyYTgyNTRhZTVlNGU3MTVmMTEyZmMzMTMwMmIwZTdiMjBhM2I5YmY0NjgxMDE4ZTM5YThjOTQ2Mzk1IiwiaWF0IjoxNjYwOTQxNjUyLCJuYmYiOjE2NjA5NDE2NTIsImV4cCI6MTY2MDk0NTI1Miwic3ViIjoiIiwic2NvcGVzIjpbXX0.jW-X9jmpujw_FCLBVApGZ_JuocgCChNFtx4LWYExXFc6TyJDRah9_HrZSgDBggiKAS1SVt_AqTXAB2fgQ_uEhSPJeY7t37LRhyqXAWSxfFgovDxL5OCAj6tSHDILOVmS0JMWAfzdJg5oEx8eFP9ISlwmzA8h2vzm9vZgrtVH-aAisYQ3niCJk2vTEb-b9mBR687ne7TUUHMyD1eeOBQ-q7hsUlgpBLDHYxTLUtda-93TDjl40Fc18jhT80hMAQsQ_pIGTC_BAVrGeBM2hXwEw4EGC8lNPzmsS-FF8VYQVFtgSOwTGbDzpSH9JtIhEfqMiqNJV72fLez3I2oMM96ziA" }))
+    render json: shelters
   end
 end
