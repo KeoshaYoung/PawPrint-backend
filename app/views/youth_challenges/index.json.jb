@@ -1,6 +1,5 @@
 @youth_challenges.map do |youth_challenge|
   {
-    id: youth_challenge.id,
     name: youth_challenge.name,
     address: youth_challenge.address,
     website: youth_challenge.website,

@@ -1,3 +1,7 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjEwMTU4NTh9.WL8u-IJvq0jOAqrKB5dN-l3BjnvKySGNImbCj-c6NXU
+
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJ6MDRqTHp0eUM3cjVCUThzSjVBMmlqTzhlMGJPSThWUlhTRDJLNmY4VjlIS0ZZRmFMRCIsImp0aSI6ImZkZTI5YWQxYzlkNzZkY2ZhZjQxNmRlNGE1ZWM3N2I2ZjRmZWE0OThlMjZmOWUwYmRhMGZiMWE5OWQ2MTFiNDkwMTUwZjNjZWU0N2UyNzYwIiwiaWF0IjoxNjYwOTMxNzg4LCJuYmYiOjE2NjA5MzE3ODgsImV4cCI6MTY2MDkzNTM4OCwic3ViIjoiIiwic2NvcGVzIjpbXX0.MdBEpuwNjwuO5NTgKrqO3rOl40L92NauQb21EwpyLv3bYmuhBIlJNWmloyoh31UsGmHmW__A_Yqp3ACexiRAdwm9kE1ndbSZOeg1SdQy4GK5-XGZQNdu0eQLply-H6CpcxEMQ0xItsTnXVzLkBfQ_cTRpX2iMnPtGBm32AnfyOKcg7uiQ2CCQfbnkEwZ3-uHnbUYPdmYdNFRW0KTzWfpgRr1bXVfzO0jeXI5hpAQDMaeTxTCVy0zT8IeJ2rezXytAzZAJsSGwzO1Wbu7qM-_82llrDqLXAFuqgFDCyweUWowHyWIaSFRpug5BZh7GRONNpdkUwpd3hIio-xDoQ8ZGg
+
 ### Users create (signup)
 POST http://localhost:3000/users.json
 Content-Type: application/json
@@ -18,16 +22,30 @@ Content-Type: application/json
   "password": "password"
 }
 
-### Photos create
-POST http://localhost:3000/photos.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjozLCJleHAiOjE2Mjk5OTI4NjR9.G2ExsrDYn3oE0vJkvm4T6Po2GbNpH5cqTEaVPVuK_MA
+### Youth Challenge index
+GET http://localhost:3000/youth_challenges.json
+
+
+
+### Youth Challenges show
+GET http://localhost:3000/youth_challenges/12.json
+
+### Youth Challenges update
+PATCH http://localhost:3000/youth_challenges/13
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "name": "Test name",
-  "width": 640,
-  "height": 480
+  "name": "delete"
 }
 
-### 
-GET http://localhost:3000/youth_challenges.json
+### Youth Challenges destroy
+DELETE http://localhost:3000/youth_challenges/13
+Authorization: Bearer {{jwt}}
+
+### PetFinder Token
+curl -d "grant_type=client_credentials&client_id=z04jLztyC7r5BQ8sJ5A2ijO8e0bOI8VRXSD2K6f8V9HKFYFaLD&client_secret=l4XgvwvxFHAfwnVqoqM5WSPmpaJmE02JkZPSSLvZ" https://api.petfinder.com/v2/oauth2/token
+
+### PetFinder Search
+GET https://api.petfinder.com/v2/organizations
+Authorization: Bearer {{token}} 
