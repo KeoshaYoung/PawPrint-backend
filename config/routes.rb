@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   delete "/youth_challenges/:id" => "youth_challenges#destroy"
 
   get "/animal_shelters" => "animal_shelters#index"
+  get "/animal_shelters/:id" => "animal_shelters#show"
 end

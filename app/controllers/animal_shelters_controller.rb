@@ -3,7 +3,12 @@ class AnimalSheltersController < ApplicationController
   require "rest-client"
 
   def index
-    shelters = JSON.load(RestClient.get("https://api.petfinder.com/v2/organizations", { "Authorization" => "Bearer {token}" }))
+    shelters = JSON.load(RestClient.get("https://api.petfinder.com/v2/organizations", { "Authorization" => "Bearer {{token}}" }))
     render json: shelters
   end
+
+  # def show
+  #   shelters = JSON.load(RestClient.get("https://api.petfinder.com/v2/organizations/?state=#{state}", { "Authorization" => "Bearer {{token}}" }))
+  #   render json: shelters
+  # end
 end
