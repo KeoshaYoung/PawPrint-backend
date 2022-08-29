@@ -3,12 +3,8 @@ class AnimalSheltersController < ApplicationController
   require "rest-client"
 
   def index
-    shelters = JSON.load(RestClient.get("https://api.petfinder.com/v2/organizations", { "Authorization" => "Bearer {{token}}" }))
+    shelters = JSON.load(RestClient.get("https://api.petfinder.com/v2/organizations", { "Authorization" => "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJ6MDRqTHp0eUM3cjVCUThzSjVBMmlqTzhlMGJPSThWUlhTRDJLNmY4VjlIS0ZZRmFMRCIsImp0aSI6IjFmMmVjNDk0YzM2OTkxNzg4YjliNzFmMmJjYjM1ZTgwNjE0OWEzNjg5OWJlNTk5OWFlNWM5YzJiNjljOTdkNmZhYTJlMTUxMGE4NWQ5MGYxIiwiaWF0IjoxNjYxNzk0MzMzLCJuYmYiOjE2NjE3OTQzMzMsImV4cCI6MTY2MTc5NzkzMywic3ViIjoiIiwic2NvcGVzIjpbXX0.lcg9B0ywZZL932VHCa-IdUD6EfXNF_9QCLMhg7GyNN5m-PLzwL8LUiB3RDSDh4Hgtlc-4ureiPhNjyc_MwQcsAiiEYqlVgE9-qzZplPQ4hRJ8wYI3zZIfQGXUAgwPjfQckb0tAGNfUjKFuR6KX6kadb1WCw8ZCnERbM6dNC8UtcR8sGc49rYdcnI5CQJlLma3tb7kY4mZ0QGwtXBxy7ZJUK_EYgMZ2vB0fEXLRUBQjjia4j3UKd9N1gbLN-yyeufhj-ldJewe03mD4Bi-MkLFmrdHf8b9ptMoAi2U98nh2VQF1v8ab1O-iU-4ZrN-GthSLB4VgFshst2qviJS9MCSA" }))
+
     render json: shelters
   end
-
-  # def show
-  #   shelters = JSON.load(RestClient.get("https://api.petfinder.com/v2/organizations/?state=#{state}", { "Authorization" => "Bearer {{token}}" }))
-  #   render json: shelters
-  # end
 end

@@ -1,6 +1,6 @@
-@jwt = 
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjE4NzczNTR9.8BHdAcUOYj50NRi-YX3LclssxOC0Lqf5vu5z6PDMcew
 
-@token = 
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJ6MDRqTHp0eUM3cjVCUThzSjVBMmlqTzhlMGJPSThWUlhTRDJLNmY4VjlIS0ZZRmFMRCIsImp0aSI6IjFmMmVjNDk0YzM2OTkxNzg4YjliNzFmMmJjYjM1ZTgwNjE0OWEzNjg5OWJlNTk5OWFlNWM5YzJiNjljOTdkNmZhYTJlMTUxMGE4NWQ5MGYxIiwiaWF0IjoxNjYxNzk0MzMzLCJuYmYiOjE2NjE3OTQzMzMsImV4cCI6MTY2MTc5NzkzMywic3ViIjoiIiwic2NvcGVzIjpbXX0.lcg9B0ywZZL932VHCa-IdUD6EfXNF_9QCLMhg7GyNN5m-PLzwL8LUiB3RDSDh4Hgtlc-4ureiPhNjyc_MwQcsAiiEYqlVgE9-qzZplPQ4hRJ8wYI3zZIfQGXUAgwPjfQckb0tAGNfUjKFuR6KX6kadb1WCw8ZCnERbM6dNC8UtcR8sGc49rYdcnI5CQJlLma3tb7kY4mZ0QGwtXBxy7ZJUK_EYgMZ2vB0fEXLRUBQjjia4j3UKd9N1gbLN-yyeufhj-ldJewe03mD4Bi-MkLFmrdHf8b9ptMoAi2U98nh2VQF1v8ab1O-iU-4ZrN-GthSLB4VgFshst2qviJS9MCSA
 
 ### Users create (signup)
 POST http://localhost:3000/users.json
@@ -31,12 +31,12 @@ GET http://localhost:3000/youth_challenges.json
 GET http://localhost:3000/youth_challenges/12.json
 
 ### Youth Challenges update
-PATCH http://localhost:3000/youth_challenges/13
+PATCH http://localhost:3000/youth_challenges/38.json
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "name": "delete"
+  "state": "Alaska"
 }
 
 ### Youth Challenges destroy
@@ -44,13 +44,15 @@ DELETE http://localhost:3000/youth_challenges/13
 Authorization: Bearer {{jwt}}
 
 ### PetFinder Token
-curl -d "grant_type=client_credentials&client_id={CLIENT-ID}&client_secret={CLIENT-SECRET}" https://api.petfinder.com/v2/oauth2/token
+curl -d "grant_type=client_credentials&client_id=z04jLztyC7r5BQ8sJ5A2ijO8e0bOI8VRXSD2K6f8V9HKFYFaLD&client_secret=l4XgvwvxFHAfwnVqoqM5WSPmpaJmE02JkZPSSLvZ" https://api.petfinder.com/v2/oauth2/token
 
 ### PetFinder Search
-GET https://api.petfinder.com/v2/organizations/?state=GA
+GET https://api.petfinder.com/v2/organizations
 Authorization: Bearer {{token}} 
 
 ### Animal Shelter index
 GET http://localhost:3000/animal_shelters.json
 
-
+###
+GET https://api.petfinder.com/v2/organizations?state=FL
+Authorization: Bearer {{token}} 

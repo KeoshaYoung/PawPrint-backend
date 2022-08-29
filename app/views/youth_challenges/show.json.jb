@@ -2,5 +2,6 @@
   id: @youth_challenge.id,
   name: @youth_challenge.name,
   address: @youth_challenge.address,
-  website: @youth_challenge.website
+  website: @youth_challenge.website,
+  state: @youth_challenge.state
 }

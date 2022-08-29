@@ -14,6 +14,7 @@ class YouthChallengesController < ApplicationController
     @youth_challenge.name = params[:name] || @youth_challenge.name
     @youth_challenge.address = params[:address] || @youth_challenge.address
     @youth_challenge.website = params[:website] || @youth_challenge.website
+    @youth_challenge.state = params[:state] || @youth_challenge.state
     if @youth_challenge.save
       render :show
     else
